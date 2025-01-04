@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="logo.png" class="logo"> <!-- Your logo -->
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-text">
+                <p>Hello</p>
+                <h1>This is <span>Sriram Chowdary</span></h1> <!-- Change name here -->
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="profile.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am karicheti sai venkata sriram chowdary, a passionate Computer Science graduate 
+                        with hands-on experience in machine learning, data science, and web development.
+                        Along with technical expertise in programming languages and tools, I actively engage in social welfare and volunteer work. 
+                        My goal is to leverage my skills in technology to create meaningful solutions.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Expereince')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interface</li>
+                            <li><span>Machine Learning</span><br>Classification and Prediction of data</li>
+                            <li><span>Artificial Intelligence</span><br>Developing AI Features</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Expereince">
+                        <ul>
+                            <li><span>Aug,2021-Feb,2022</span><br>Data Scientist Intern at Tech Mahindra</li>
+                            <li><span>Apr,2021-May2021</span><br>Python with Ml Intern at Shri Technologies</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2025</span><br>MS from Saint Louis University</li>
+                            <li><span>2022</span><br>Btech from Aditya Institute of Technology and Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="work-1.jpg">
+            </div>
+            <div class="work">
+                <img src="work-2.png">
+            </div>
+            <div class="work">
+                <img src="work-3.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+</body>
+</html>
