@@ -132,16 +132,107 @@ nav ul li a:hover::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
-    margin: 50px;
+    margin-top: 50px;
 }
 .work{
-    border: radius 10px; 
+    border-radius: 10px; 
     position: relative;
     overflow: hidden;
 }
-work img{
+.work img{
     width: 100%;
     border-radius: 10px;
     display: block;
+    transition: transform 0.5s;
 }
-    
+.layer{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), #7fb5f3);
+    border-radius: 10px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    overflow: hidden;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+
+}
+.layer h3 {
+    font-weight: bold; /* Ensures bold styling */
+    margin-bottom: 20px;
+    color: #fff; /* Optional: Makes text clearly visible */
+    text-align: center; /* Aligns the text centrally */
+}
+.layer a {
+    position: absolute; /* Positions the icon absolutely within the .layer */
+    bottom: 10px; /* Adjust the distance from the bottom of the container */
+    left: 50%; /* Centers horizontally */
+    transform: translateX(-50%); /* Fixes horizontal alignment */
+    display: flex; /* Enables flexbox for centering the icon itself */
+    justify-content: center;
+    align-items: center;
+    color: #7fb5f3; /* Icon color */
+    text-decoration: none;
+    font-size: 24px; /* Icon size */
+    background: #fff; /* Background of the circle */
+    width: 60px; /* Circle width */
+    height: 60px; /* Circle height */
+    border-radius: 50%; /* Makes it a circle */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #7fb5f3;
+    padding: 14px 50px;
+    border-radius: 6px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #7fb5f3;
+}
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #7fb5f3;
+    margin-right: 15px;
+    front-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #7fb5f3;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #7fb5f3;
+    transform: translateY(-5px);
+}
