@@ -12,21 +12,30 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="logo.png" class="logo"> <!-- Your logo -->
-                <ul id="side menu">
+                <a href="#header">
+                    <img src="images/logo.png" alt="Logo" class="logo"> <!-- Your logo -->
+                </a>
+                
+                <!-- Menu Links -->
+                <ul id="side-menu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-circle-xmark"  onclick="closemenu()"></i>
+                    <li><a href="#certificates">Certifications</a></li>
+                    
+                    <!-- Close Menu Icon -->
+                    <i class="fa-solid fa-circle-xmark" onclick="closeMenu()"></i>
                 </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                
+                <!-- Open Menu Icon -->
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
             </nav>
 
             <div class="header-text">
                 <p><strong>Hello</strong></p>
                 <h1>I'm <span class="text"></span></h1> <!-- Change name here -->
-                <a href="Sai_Venkata_Sriram_Chowdary_Karicheti.pdf" class="btn btn2">Download CV</a>
+                <a href="images/Sai_Venkata_Sriram_Chowdary_Karicheti.pdf" class="btn btn2">Download CV</a>
                 <a href="#contact" class="btn btn2">Hire Me</a>
             </div>
             </div>
@@ -37,7 +46,7 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="profile.jpg" alt="Profile Image">
+                    <img src="images/profile.jpg" alt="Profile Image">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
@@ -60,8 +69,14 @@
                     </div>
                     <div class="tab-contents" id="Experience">
                         <ul>
-                            <li><span>Aug 2021 - Feb 2022</span><br>Data Scientist Intern at Tech Mahindra</li>
-                            <li><span>Apr 2021 - May 2021</span><br>Python with ML Intern at Shri Technologies</li>
+                            <li><span>Aug 2021 - Feb 2022</span><br>Data Scientist Internship at Tech Mahindra</li>
+                            <li><span>Apr 2021 - May 2021</span><br>Python with ML Internship at Shri Technologies</li>
+                            <li><span>Mar 2023 - Apr 2023</span><br>Project Management Internship at Excelerate</li>
+                            <li><span>Apr 2023 - May 2023</span><br>Innovation & Entrepreneurship Internship at Excelerate</li>
+                            <li><span>Jun 2023 - Jul 2023</span><br>Digital Marketing Internship at Excelerate</li>
+                            
+                        </ul>
+                        </ul>
                         </ul>
                     </div>
                     <div class="tab-contents" id="Education">
@@ -80,39 +95,102 @@
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
             <div class="work">
-                <img src="work-1.png">
+                <img src="images/work-1.png">
                 <div class="layer">
                     <h3>Parkinson-classification</h3>
                     <p>This project explores the application of Machine Learning techniques for predicting Parkinson's disease (PD)</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://github.com/sriram-2490/Parkinson-classification-ml"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="work">
-                <img src="work-2.png">
+                <img src="images/work-2.png">
                 <div class="layer">
                     <h3>Fake News Detection</h3>
                     <p>This project implements a Fake News Detection System using Machine Learning.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://github.com/sriram-2490/fake-news-detection"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="work">
-                <img src="work-3.png">
+                <img src="images/work-3.png">
                 <div class="layer">
                     <h3>Intelligent Virtual Assistance</h3>
                     <p>Iva is a voice-activated personal assistant built using Python, OpenAI GPT-3, and several other Python libraries.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://github.com/sriram-2490/Intelligent-virtual-assistance"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
-            <div class="work">
-                <img src="work-1.png">
+            <div class="work" id="work4">
+                <img src="images/work-1.png">
                 <div class="layer">
                     <h3>Ekart Design</h3>
                     <p>This project is a design for the Ekart online grocery shopping platform. </p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://github.com/sriram-2490/Ekart-Design"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
-        <a href="#" class="btn">see more</a>
+        <a href="javascript:void(0)" id="explore-more" class="btn">Explore More</a>
+    </div>
+</div>
+
+<div id="certificates">
+    <div class="container">
+        <h1 class="sub-title">My Certifications</h1>
+        <div class="carousel">
+            <div class="slides">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <div class="content">
+                        <h3>AWS Machine Learning Certification</h3>
+                        <p>Completed training and certification on Machine Learning from AWS (Sept - Oct 2022).</p>
+                        <a href="https://drive.google.com/drive/folders/1CifjPzjXEhUWTe1rpvj8AErmpygV4SDJ" class="link-icon">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="content">
+                        <h3>Data Science with Python</h3>
+                        <p>Completed certification from Great Learning Academy (Sept - Oct 2022).</p>
+                        <a href="https://drive.google.com/drive/folders/1CifjPzjXEhUWTe1rpvj8AErmpygV4SDJ" class="link-icon">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="content">
+                        <h3>Graphic Design Workshop</h3>
+                        <p>Certified by My Captain for attending a Graphic Design Workshop (Mar - Apr 2020).</p>
+                        <a href="https://drive.google.com/drive/folders/1CifjPzjXEhUWTe1rpvj8AErmpygV4SDJ" class="link-icon">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <div class="content">
+                        <h3>Certificate of Publication</h3>
+                        <p>Certification from Dogo Rangsang Publication for Publishing Classification of Parkinson's disease (Jan - Apr 2022).</p>
+                        <a href="https://drive.google.com/drive/folders/1CifjPzjXEhUWTe1rpvj8AErmpygV4SDJ" class="link-icon">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <div class="content">
+                        <h3>Blue Prism Foundation Training</h3>
+                    <p>Completed Blue Prism Foundation Training on (Jun - July 2021).</p>
+                        <a href="https://drive.google.com/drive/folders/1CifjPzjXEhUWTe1rpvj8AErmpygV4SDJ" class="link-icon">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Arrows -->
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
     </div>
 </div>
 <div id="contact">
@@ -133,12 +211,13 @@
             </div> <!-- Close contact-left here -->
 
             <div class="contact-right">
-                <form action="#" method="POST">
+                <form name="submit-to-google-sheet">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div> <!-- Close contact-right here -->
         </div>
     </div>
@@ -159,13 +238,16 @@
     }
 </script>
 <script>
-    var sideMenu = document.getElementById("side menu");
-    function openmenu(){
-        sideMenu.style.right = "0";
-    }
-    function closemenu(){
-        sideMenu.style.right = "-200px";
-    }
+    function openMenu() {
+    const sideMenu = document.getElementById('side-menu');
+    sideMenu.classList.add('active');
+}
+
+// Function to close the menu
+function closeMenu() {
+    const sideMenu = document.getElementById('side-menu');
+    sideMenu.classList.remove('active');
+}
 </script>
 <script>
     // ——————————————————————————————————————————————————
@@ -254,5 +336,66 @@ const next = () => {
 next()
 
 </script>
+<script>
+    let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    if (index >= totalSlides) currentSlide = 0;
+    if (index < 0) currentSlide = totalSlides - 1;
+
+    const offset = -currentSlide * 100;
+    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    currentSlide++;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide--;
+    showSlide(currentSlide);
+}
+
+// Initial display
+showSlide(currentSlide);
+
+</script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyvSL2IEZy4C8Wrvsr-BTnnHkjlscNbTUrgMtYRqQWHsmzubMmb_NCW94IqOdp1TPJ0-g/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById('msg')
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!"
+                setTimeout(function() {
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+    <scripts>
+        <script>
+            document.getElementById('explore-more').addEventListener('click', function() {
+                var work4 = document.getElementById('work4');
+                if (work4.style.display === "none") {
+                    work4.style.display = "block";  // Show the 4th work
+                    this.innerHTML = "See Less";   // Change the button text to "See Less"
+                } else {
+                    work4.style.display = "none";  // Hide the 4th work
+                    this.innerHTML = "Explore More"; // Change the button text back
+                }
+            });
+        </script>        
+    </scripts>
+</scripts>
 </body>
 </html>
