@@ -24,8 +24,12 @@
             </nav>
 
             <div class="header-text">
-                <p>Hello</p>
-                <h1>This is <span>Sriram Chowdary</span></h1> <!-- Change name here -->
+                <p><strong>Hello</strong></p>
+                <h1>I'm <span class="text"></span></h1> <!-- Change name here -->
+                <a href="Sai_Venkata_Sriram_Chowdary_Karicheti.pdf" class="btn btn2">Download CV</a>
+                <a href="#contact" class="btn btn2">Hire Me</a>
+            </div>
+            </div>
             </div>
         </div>
     </div>
@@ -33,43 +37,43 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="profile.jpg">
+                    <img src="profile.jpg" alt="Profile Image">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>I am karicheti sai venkata sriram chowdary, a passionate Computer Science graduate 
+                    <p>I am Karicheti Sai Venkata Sriram Chowdary, a passionate Computer Science graduate 
                         with hands-on experience in machine learning, data science, and web development.
                         Along with technical expertise in programming languages and tools, I actively engage in social welfare and volunteer work. 
                         My goal is to leverage my skills in technology to create meaningful solutions.
                     </p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('Expereince')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
                         <p class="tab-links" onclick="opentab('Education')">Education</p>
                     </div>
                     <div class="tab-contents active-tab" id="Skills">
                         <ul>
-                            <li><span>UI/UX</span><br>Designing Web/App interface</li>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
                             <li><span>Machine Learning</span><br>Classification and Prediction of data</li>
                             <li><span>Artificial Intelligence</span><br>Developing AI Features</li>
                         </ul>
                     </div>
-                    <div class="tab-contents" id="Expereince">
+                    <div class="tab-contents" id="Experience">
                         <ul>
-                            <li><span>Aug,2021-Feb,2022</span><br>Data Scientist Intern at Tech Mahindra</li>
-                            <li><span>Apr,2021-May2021</span><br>Python with Ml Intern at Shri Technologies</li>
+                            <li><span>Aug 2021 - Feb 2022</span><br>Data Scientist Intern at Tech Mahindra</li>
+                            <li><span>Apr 2021 - May 2021</span><br>Python with ML Intern at Shri Technologies</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="Education">
                         <ul>
                             <li><span>2025</span><br>MS from Saint Louis University</li>
-                            <li><span>2022</span><br>Btech from Aditya Institute of Technology and Management</li>
+                            <li><span>2022</span><br>B.Tech from Aditya Institute of Technology and Management</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
 </div>
 <div id="portfolio">
     <div class="container">
@@ -126,8 +130,8 @@
                         <i class="fa-brands fa-github"></i>
                     </a>
                 </div>
-                <a href="Sai_Venkata_Sriram_Chowdary_Karicheti.pdf" class="btn btn2">Download CV</a>
-            </div>
+            </div> <!-- Close contact-left here -->
+
             <div class="contact-right">
                 <form action="#" method="POST">
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -135,10 +139,11 @@
                     <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
-            </div>
+            </div> <!-- Close contact-right here -->
         </div>
     </div>
 </div>
+
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
@@ -161,6 +166,93 @@
     function closemenu(){
         sideMenu.style.right = "-200px";
     }
+</script>
+<script>
+    // ——————————————————————————————————————————————————
+// TextScramble Class
+// ——————————————————————————————————————————————————
+class TextScramble {
+  constructor(el) {
+    this.el = el
+    this.chars = '!<>-_\\/[]{}—=+*^?#________'  // Characters for scrambling
+    this.update = this.update.bind(this)
+  }
+
+  // Set new text to be scrambled
+  setText(newText) {
+    const oldText = this.el.innerText
+    const length = Math.max(oldText.length, newText.length)
+    const promise = new Promise((resolve) => this.resolve = resolve)
+    this.queue = []
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || ''
+      const to = newText[i] || ''
+      const start = Math.floor(Math.random() * 40)
+      const end = start + Math.floor(Math.random() * 40)
+      this.queue.push({ from, to, start, end })
+    }
+    cancelAnimationFrame(this.frameRequest)
+    this.frame = 0
+    this.update()
+    return promise
+  }
+
+  // Update function to create the scramble effect
+  update() {
+    let output = ''
+    let complete = 0
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i]
+      if (this.frame >= end) {
+        complete++
+        output += to
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar()
+          this.queue[i].char = char
+        }
+        output += `<span class="dud">${char}</span>`
+      } else {
+        output += from
+      }
+    }
+    this.el.innerHTML = output
+    if (complete === this.queue.length) {
+      this.resolve()
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update)
+      this.frame++
+    }
+  }
+
+  // Get a random character from the chars array
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)]
+  }
+}
+
+// ——————————————————————————————————————————————————
+// Example: Set dynamic phrases
+// ——————————————————————————————————————————————————
+const phrases = [
+  'UI/UX Designer',
+  'AI/ML Engineer',
+  'Sriram Chowdary'
+]
+
+const el = document.querySelector('.text')  // The element to display the text
+const fx = new TextScramble(el)
+
+let counter = 0
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    setTimeout(next, 800)  // Wait 800ms before changing the phrase
+  })
+  counter = (counter + 1) % phrases.length  // Loop through the phrases
+}
+
+next()
+
 </script>
 </body>
 </html>
