@@ -486,7 +486,7 @@ nav .fa-solid {
 /* Mobile-Specific Adjustments */
 @media only screen and (max-width: 600px) {
     #header {
-        background-image: url('images/phnimagebg.PNG'); /* Ensure the correct image path */
+        background-image: url('images/imagebg.PNG'); /* Ensure the correct image path */
         background-size: contain; /* Shrinks the image to fit */
         background-position: center; /* Centers the image */
         background-repeat: no-repeat; /* Prevents tiling of the image */
