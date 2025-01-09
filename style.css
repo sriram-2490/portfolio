@@ -14,76 +14,91 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(imagebg.png);
-    background-size: auto;
+    background-image: url(images/imagebg.png);
+    background-size: 750px;
     background-position: bottom right;
     background-repeat: no-repeat;
 
 }
-.container{
+.container {
     padding: 10px 10%;
 }
 
+/* Set up the nav bar */
 nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: fixed; /* Fixed at the top */
+    justify-content: space-between; /* Aligns logo on the left and menu on the right */
+    align-items: center; /* Vertically aligns the items in the nav */
+    padding: 20px;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
-    background: #000000;
-    padding: 5px 2%; /* Narrow the sides */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #7fb5f3; /* Adds a line below the menu */
-    height: 70px; /* Set a fixed height for the navbar */
+    background-color: #090909; /* Adjust to your preference */
+    z-index: 1000; /* Ensures the nav is above other elements */
 }
 
 .logo {
-    width: 100px; /* Reduce logo size */
+    height: 100px; /* Adjust the logo size as needed */
 }
 
-nav ul {
+/* Style for the menu links */
+#side-menu {
     display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
     list-style: none;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px; /* Adjust margin for a more compact look */
+#side-menu li {
+    margin: 0 15px;
 }
 
-nav ul li a {
-    color: #fff;
+#side-menu a {
     text-decoration: none;
-    font-size: 16px; /* Adjust font size for a narrower navbar */
-    position: relative;
+    color: #ffffff; /* Change to desired color */
+    font-size: 18px; /* Adjust font size */
 }
 
-nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #7fb5f3;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: width 0.5s ease;
+/* Style for the menu icons */
+.fa-bars, .fa-circle-xmark {
+    font-size: 30px;
+    cursor: pointer;
+    color: #000; /* Change to desired color */
+    display: none; /* Hidden by default, shown on mobile */
 }
 
-nav ul li a:hover::after {
-    width: 100%;
+/* Make the menu visible on mobile */
+@media only screen and (max-width: 600px) {
+    #side-menu {
+        display: none; /* Hide the menu by default */
+    }
+    
+    .fa-bars {
+        display: block; /* Show the menu icon on mobile */
+    }
+
+    #side-menu.active {
+        display: block; /* Show the menu when active */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #7fb5f3;
+        width: 200px;
+        padding: 20px;
+    }
+
+    #side-menu li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .fa-circle-xmark {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 }
 
-/* Add space below fixed navigation to avoid overlap with content */
-body {
-    padding-top: 70px; /* Adjust this based on the new height of the navbar */
-}
 
 .header-text{
     margin-top: 20%;
@@ -121,22 +136,35 @@ body {
 .about-col-2{
     flex-basis: 60%;
 }
-.sub-title{
+.sub-title {
     font-size: 60px;
     font-weight: 600;
+    margin-bottom: 20px; /* Adds space below the title */
+    text-align: center; /* Centers the subtitle */
+    
 }
-.tab-titles{
+
+.tab-titles {
     display: flex;
-    margin: 20px 0 40px;
+    justify-content: center; /* Centers the tab titles */
+    margin: 40px 0; /* Adds spacing around the tab titles */
+    padding: 0 10px;
 }
-.tab-links{
-    margin-right: 50px;
+
+.tab-links {
+    margin: 0 30px; /* Increases space between tab links */
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    transition: transform 0.3s ease;
 }
-.tab-links::after{
+
+.tab-links:hover {
+    transform: scale(1.05); /* Slight scale on hover to make the tab clickable */
+}
+
+.tab-links::after {
     content: '';
     width: 0;
     height: 3px;
@@ -144,52 +172,86 @@ body {
     position: absolute;
     left: 0;
     bottom: -8px;
-    transition: 0.5;
+    transition: width 0.5s ease;
 }
-.tab-links.active-link::after{
+
+.tab-links.active-link::after {
     width: 50%;
 }
-.tab-contents ul li{
+
+.tab-contents ul li {
     list-style: none;
-    margin: 10px 0;
+    margin: 15px 0; /* Adds spacing between list items */
+    position: relative; /* Needed for custom bullet styling */
+    padding-left: 20px; /* Adds padding to the left for better alignment */
 }
-.tab-contents ul li span{
+
+.tab-contents ul li::before {
+    content: ''; 
+    position: absolute;
+    left: 0;
+    top: 10px; /* Adjusts vertical positioning */
+    width: 8px;
+    height: 8px;
+    background-color: #7fb5f3; /* Custom bullet color */
+    border-radius: 50%; /* Makes the bullet circular */
+}
+
+.tab-contents ul li span {
     color: #7fb5f3;
     font-size: 14px;
+    font-weight: 600; /* Makes the span text bolder */
 }
-.tab-contents{
+.tab-contents {
     display: none;
+    padding-left: 20px; /* Adds padding to the left for better alignment */
 }
-.tab-contents.active-tab{
+
+.tab-contents.active-tab {
     display: block;
+    margin-top: 20px; /* Adds space above the tab content */
+    padding: 10px 0;
 }
-#portfolio{
-    padding: 50px 0;}
-.work-list{
+
+
+#portfolio {
+    padding: 50px 0;
+}
+
+.work-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
-.work{
-    border-radius: 10px; 
+
+.work {
+    border-radius: 10px;
     position: relative;
     overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
-.work img{
+
+#work4 {
+    display: none; /* Initially hide the 4th work */
+}
+
+.work img {
     width: 100%;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
 }
-.layer{
+
+.layer {
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.6), #7fb5f3);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #7fb5f3);
     border-radius: 10px;
     position: absolute;
-    left:0;
-    bottom:0;
+    left: 0;
+    bottom: 0;
     overflow: hidden;
     display: flex;
     align-self: center;
@@ -198,38 +260,42 @@ body {
     padding: 0 40px;
     text-align: center;
     font-size: 14px;
-    transition: height 0.5s;
+    transition: height 0.5s ease;
+}
 
-}
 .layer h3 {
-    font-weight: bold; /* Ensures bold styling */
+    font-weight: bold;
     margin-bottom: 20px;
-    color: #fff; /* Optional: Makes text clearly visible */
-    text-align: center; /* Aligns the text centrally */
+    color: #fff;
+    text-align: center;
 }
+
 .layer a {
-    position: absolute; /* Positions the icon absolutely within the .layer */
-    bottom: 10px; /* Adjust the distance from the bottom of the container */
-    left: 50%; /* Centers horizontally */
-    transform: translateX(-50%); /* Fixes horizontal alignment */
-    display: flex; /* Enables flexbox for centering the icon itself */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     justify-content: center;
     align-items: center;
-    color: #7fb5f3; /* Icon color */
+    color: #7fb5f3;
     text-decoration: none;
-    font-size: 24px; /* Icon size */
-    background: #fff; /* Background of the circle */
-    width: 60px; /* Circle width */
-    height: 60px; /* Circle height */
-    border-radius: 50%; /* Makes it a circle */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
+    font-size: 24px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-.work:hover img{
+
+.work:hover img {
     transform: scale(1.1);
 }
-.work:hover .layer{
+
+.work:hover .layer {
     height: 100%;
 }
+
 .btn{
     display: block;
     margin: 50px auto;
@@ -244,6 +310,105 @@ body {
 .btn:hover{
     background: #7fb5f3;
 }
+#certificates {
+    background: #000;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    display: flex; /* Added to center content */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    flex-direction: column; /* Keeps content stacked vertically */
+}
+
+#certificates .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#certificates .sub-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #7fb5f3;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 80%; /* Set width to make it responsive */
+    max-width: 800px;
+    height: 250px; /* Adjust height as needed */
+    margin: 0 auto; /* Center the carousel horizontally */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    padding: 20px;
+    background: #121212;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Center text inside the slide */
+}
+
+.slide h3 {
+    font-size: 1.25rem;
+    color: #7fb5f3;
+    margin-bottom: 10px;
+}
+
+.slide p {
+    font-size: 0.9rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.slide .link-icon {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #7fb5f3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.slide .link-icon:hover {
+    color: #fff;
+}
+
+/* Navigation Buttons */
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #7fb5f3;
+    border: none;
+    font-size: 2rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.carousel button:hover {
+    background: rgba(127, 181, 243, 0.7);
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
 .contact-left{
     flex-basis: 35%;
 }
@@ -317,10 +482,10 @@ form btn2{
 nav .fa-solid {
     display: none;
 }
-
+/* Mobile-Specific Adjustments */
 @media only screen and (max-width: 600px) {
     #header {
-        background-image: url('phnimagebg.PNG'); /* Ensure the correct image path */
+        background-image: url('images/phnimagebg.PNG'); /* Ensure the correct image path */
         background-size: contain; /* Shrinks the image to fit */
         background-position: center; /* Centers the image */
         background-repeat: no-repeat; /* Prevents tiling of the image */
@@ -416,5 +581,92 @@ nav .fa-solid {
         background: #7fb5f3; /* Hover effect */
         color: #fff;
     }
-    
+    /* Default state for navigation links on mobile screens */
+@media only screen and (max-width: 600px) {
+    #side-menu {
+        display: none; /* Initially hide the menu */
+        background: #7fb5f3;
+        position: fixed;
+        top: 0;
+        right: -200px; /* Initially hidden, slides in on toggle */
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.3s ease;
+    }
+
+    #side-menu li {
+        display: block;
+        margin: 25px;
+        text-align: center;
+    }
+
+    #side-menu.active {
+        right: 0; /* Brings the menu into view */
+    }
+
+    /* Display menu icon */
+    .fa-bars {
+        display: block;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 3;
+    }
+
+    /* Hide the menu links by default */
+    #side-menu li {
+        display: none;
+    }
+
+    /* Show links when menu is active */
+    #side-menu.active li {
+        display: block;
+    }
+
+    /* Close button inside menu */
+    .fa-circle-xmark {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        font-size: 25px;
+        cursor: pointer;
+    }
+}
+#certificates .carousel {
+    padding: 10px;
+}
+
+#certificates .slide {
+    width: 100%; /* Adjust width to fit smaller screens */
+    padding: 10px;
+}
+
+#certificates .content h3 {
+    font-size: 18px; /* Decrease the font size of the title */
+}
+
+#certificates .content p {
+    font-size: 14px; /* Decrease the font size of the description */
+}
+
+#certificates .link-icon {
+    font-size: 16px; /* Adjust the size of the link icon */
+}
+
+.prev, .next {
+    font-size: 18px; /* Adjust the size of the navigation arrows */
+    padding: 10px;
+}
+
+}
+#msg{
+    color: #1ae000;
+    margin-top: -10px;
+    display: block;
 }
