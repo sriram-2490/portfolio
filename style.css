@@ -23,30 +23,51 @@ body{
 .container{
     padding: 10px 10%;
 }
-nav{
+
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #000000;
+    padding: 5px 2%; /* Narrow the sides */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #7fb5f3; /* Adds a line below the menu */
+    height: 70px; /* Set a fixed height for the navbar */
 }
-.logo{
-    width: 140px;
+
+.logo {
+    width: 100px; /* Reduce logo size */
 }
-nav ul li{
-    display: inline-block;
+
+nav ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
     list-style: none;
-    margin: 10px 20px;
 }
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px; /* Adjust margin for a more compact look */
+}
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px; /* Adjust font size for a narrower navbar */
     position: relative;
 }
 
 nav ul li a::after {
     content: '';
-    width: 0%;
+    width: 0;
     height: 3px;
     background: #7fb5f3;
     position: absolute;
@@ -58,6 +79,12 @@ nav ul li a::after {
 nav ul li a:hover::after {
     width: 100%;
 }
+
+/* Add space below fixed navigation to avoid overlap with content */
+body {
+    padding-top: 70px; /* Adjust this based on the new height of the navbar */
+}
+
 .header-text{
     margin-top: 20%;
     font-size: 30px;   
@@ -67,7 +94,7 @@ nav ul li a:hover::after {
     margin-top: 20px;
 }
 .header-text p {
-    font-size: 30px; /* Smaller size */
+    font-size: 40px; /* Smaller size */
     margin: 0; /* Removes line spacing */
     font-weight: bold; /* Makes the text bold */
     color: #7fb5f3; /* Optional: Unique color to make it stand out */
@@ -248,9 +275,10 @@ nav ul li a:hover::after {
 }
 .btn.btn2 {
     display: inline-block;
-    background: #fff;
+    background: #aebae7;
     color: #000;
-    padding: 10px 20px;
+    padding: 6px 12px; /* Reduced padding to make the button smaller */
+    font-size: 14px; /* Adjusted font size for a smaller button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
