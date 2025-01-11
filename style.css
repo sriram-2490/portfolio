@@ -555,7 +555,10 @@ nav .fa-solid {
         margin-bottom: 30px;
     }
     .about-col-2{
-        font-size:10px;
+        font-size:15px;
+    }
+    .about-col-2 .p{
+        font-size: auto;
     }
     .tab-titles{
         font-size: 16px;
