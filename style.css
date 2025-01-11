@@ -179,16 +179,6 @@ nav {
     padding-left: 20px; /* Adds padding to the left for better alignment */
 }
 
-.tab-contents ul li::before {
-    content: ''; 
-    position: absolute;
-    left: 0;
-    top: 10px; /* Adjusts vertical positioning */
-    width: 8px;
-    height: 8px;
-    background-color: #7fb5f3; /* Custom bullet color */
-    border-radius: 50%; /* Makes the bullet circular */
-}
 
 .tab-contents ul li span {
     color: #7fb5f3;
@@ -477,10 +467,14 @@ nav .fa-solid {
     display: none;
 }
 /* Mobile-Specific Adjustments */
-@media only screen and (max-width: 600px) 
+@media only screen and (max-width: 800px) 
 {
-    body{
-        overflow-x: hidden;
+    body {
+        margin: 0; /* Remove any default margins */
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+        display: flex;
+        flex-direction: column;
     }
     .header-text {
         margin-top: 130px; /* Adjust margin-top for smaller screens */
@@ -554,6 +548,8 @@ nav .fa-solid {
     }
     .about-col-1, .about-col-2{
         flex-basis: 100%;
+        text-align: center;
+        size-adjust: 20px;
     }
     .about-col-1{
         margin-bottom: 30px;
@@ -563,7 +559,7 @@ nav .fa-solid {
     }
     .tab-titles{
         font-size: 16px;
-        margin-right: 20px;
+        margin-right: 50px;
     }
     .contact-left, .contact-right{
         flex-basis: 100%;
