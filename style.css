@@ -492,7 +492,6 @@ nav .fa-solid {
         font-size: 40px;
         margin-top: 10px;
         height: fit-content;
-        white-space: nowrap; /* Prevents the text from wrapping to the next line */
     }
     .header-text a {
         margin: 50px 0; /* Adjust button spacing for small screens */
