@@ -13,7 +13,7 @@
         <div class="container">
             <nav>
                 <a href="#header">
-                    <img src="images/logo.PNG" alt="Logo" class="logo"> <!-- Your logo -->
+                    <img src="images/logo.png" alt="Logo" class="logo"> <!-- Your logo -->
                 </a>
                 
                 <!-- Menu Links -->
@@ -21,15 +21,12 @@
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                                     <li><a href="#certificates">Certifications</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#certificates">Certifications</a></li>
-                    
-                    <!-- Close Menu Icon -->
-                    <i class="fa-solid fa-circle-xmark" onclick="closeMenu()"></i>
                 </ul>
                 
                 <!-- Open Menu Icon -->
-                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
             </nav>
 
             <div class="header-text">
@@ -44,12 +41,12 @@
     </div>
     <div id="about">
         <div class="container">
+            <h1 class="sub-title">About Me</h1>
             <div class="row">
                 <div class="about-col-1">
                     <img src="images/profile.jpg" alt="Profile Image">
                 </div>
                 <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
                     <p>I am Karicheti Sai Venkata Sriram Chowdary, a passionate Computer Science graduate 
                         with hands-on experience in machine learning, data science, and web development.
                         Along with technical expertise in programming languages and tools, I actively engage in social welfare and volunteer work. 
@@ -76,8 +73,6 @@
                             <li><span>Jun 2023 - Jul 2023</span><br>Digital Marketing Internship at Excelerate</li>
                             
                         </ul>
-                        </ul>
-                        </ul>
                     </div>
                     <div class="tab-contents" id="Education">
                         <ul>
@@ -94,7 +89,7 @@
     <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
-            <div class="work">
+            <div class="work">*
                 <img src="images/work-1.png">
                 <div class="layer">
                     <h3>Parkinson-classification</h3>
@@ -194,10 +189,10 @@
     </div>
 </div>
 <div id="contact">
+    <h1 class="sub-title">Contact Me</h1>
     <div class="container">
         <div class="row">
             <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
                 <p><i class="fa-solid fa-envelope"></i> sriramchaowdary@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> +1 3144105084</p>
                 <div class="social-icons">
@@ -238,103 +233,89 @@
     }
 </script>
 <script>
-    function openMenu() {
+    function toggleMenu() {
     const sideMenu = document.getElementById('side-menu');
-    sideMenu.classList.add('active');
-}
-
-// Function to close the menu
-function closeMenu() {
-    const sideMenu = document.getElementById('side-menu');
-    sideMenu.classList.remove('active');
-}
+    sideMenu.classList.toggle('active'); // Toggles the 'active' class
+    }
 </script>
 <script>
-    // ——————————————————————————————————————————————————
+// ——————————————————————————————————————————————————
 // TextScramble Class
 // ——————————————————————————————————————————————————
 class TextScramble {
-  constructor(el) {
-    this.el = el
-    this.chars = '!<>-_\\/[]{}—=+*^?#________'  // Characters for scrambling
-    this.update = this.update.bind(this)
-  }
-
-  // Set new text to be scrambled
-  setText(newText) {
-    const oldText = this.el.innerText
-    const length = Math.max(oldText.length, newText.length)
-    const promise = new Promise((resolve) => this.resolve = resolve)
-    this.queue = []
-    for (let i = 0; i < length; i++) {
-      const from = oldText[i] || ''
-      const to = newText[i] || ''
-      const start = Math.floor(Math.random() * 40)
-      const end = start + Math.floor(Math.random() * 40)
-      this.queue.push({ from, to, start, end })
+    constructor(el) {
+        this.el = el;
+        this.chars = '!<>-_\\/[]{}—=+*^?#________'; // Characters for scrambling
+        this.update = this.update.bind(this);
     }
-    cancelAnimationFrame(this.frameRequest)
-    this.frame = 0
-    this.update()
-    return promise
-  }
 
-  // Update function to create the scramble effect
-  update() {
-    let output = ''
-    let complete = 0
-    for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char } = this.queue[i]
-      if (this.frame >= end) {
-        complete++
-        output += to
-      } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
-          char = this.randomChar()
-          this.queue[i].char = char
+    setText(newText) {
+        const oldText = this.el.innerText;
+        const length = Math.max(oldText.length, newText.length);
+        const promise = new Promise((resolve) => (this.resolve = resolve));
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+            const from = oldText[i] || '';
+            const to = newText[i] || '';
+            const start = Math.floor(Math.random() * 40);
+            const end = start + Math.floor(Math.random() * 40);
+            this.queue.push({ from, to, start, end });
         }
-        output += `<span class="dud">${char}</span>`
-      } else {
-        output += from
-      }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+        return promise;
     }
-    this.el.innerHTML = output
-    if (complete === this.queue.length) {
-      this.resolve()
-    } else {
-      this.frameRequest = requestAnimationFrame(this.update)
-      this.frame++
-    }
-  }
 
-  // Get a random character from the chars array
-  randomChar() {
-    return this.chars[Math.floor(Math.random() * this.chars.length)]
-  }
+    update() {
+        let output = '';
+        let complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+            let { from, to, start, end, char } = this.queue[i];
+            if (this.frame >= end) {
+                complete++;
+                output += to;
+            } else if (this.frame >= start) {
+                if (!char || Math.random() < 0.28) {
+                    char = this.randomChar();
+                    this.queue[i].char = char;
+                }
+                output += `<span class="dud">${char}</span>`;
+            } else {
+                output += from;
+            }
+        }
+        this.el.innerHTML = output;
+        if (complete === this.queue.length) {
+            this.resolve();
+        } else {
+            this.frameRequest = requestAnimationFrame(this.update);
+            this.frame++;
+        }
+    }
+
+    randomChar() {
+        return this.chars[Math.floor(Math.random() * this.chars.length)];
+    }
 }
 
 // ——————————————————————————————————————————————————
 // Example: Set dynamic phrases
 // ——————————————————————————————————————————————————
-const phrases = [
-  'UI/UX Designer',
-  'AI/ML Engineer',
-  'Sriram Chowdary'
-]
+const phrases = ['UI/UX Designer', 'AI/ML Engineer', 'Sriram Chowdary'];
 
-const el = document.querySelector('.text')  // The element to display the text
-const fx = new TextScramble(el)
+const el = document.querySelector('.text'); // The element to display the text
+const fx = new TextScramble(el);
 
-let counter = 0
+let counter = 0;
 const next = () => {
-  fx.setText(phrases[counter]).then(() => {
-    setTimeout(next, 800)  // Wait 800ms before changing the phrase
-  })
-  counter = (counter + 1) % phrases.length  // Loop through the phrases
-}
+    fx.setText(phrases[counter]).then(() => {
+        setTimeout(next, 800); // Wait 800ms before changing the phrase
+    });
+    counter = (counter + 1) % phrases.length; // Loop through the phrases
+};
 
-next()
-
+next();
 </script>
 <script>
     let currentSlide = 0;
@@ -384,17 +365,27 @@ showSlide(currentSlide);
     </script>
     <scripts>
         <script>
-            document.getElementById('explore-more').addEventListener('click', function() {
+            // Ensure work4 is initially hidden and button text is "Explore More"
+            document.addEventListener('DOMContentLoaded', function() {
                 var work4 = document.getElementById('work4');
-                if (work4.style.display === "none") {
-                    work4.style.display = "block";  // Show the 4th work
-                    this.innerHTML = "See Less";   // Change the button text to "See Less"
-                } else {
-                    work4.style.display = "none";  // Hide the 4th work
-                    this.innerHTML = "Explore More"; // Change the button text back
-                }
+                var button = document.getElementById('explore-more');
+                
+                // Initial state setup
+                work4.style.display = "none";
+                button.innerHTML = "Explore More";
+        
+                // Button click event to toggle display and change text
+                button.addEventListener('click', function() {
+                    if (work4.style.display === "none") {
+                        work4.style.display = "block";  // Show the 4th work
+                        button.innerHTML = "See Less";   // Change the button text to "See Less"
+                    } else {
+                        work4.style.display = "none";  // Hide the 4th work
+                        button.innerHTML = "Explore More"; // Change the button text back
+                    }
+                });
             });
-        </script>        
+        </script>   
     </scripts>
 </scripts>
 </body>
