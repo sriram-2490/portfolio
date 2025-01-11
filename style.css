@@ -493,9 +493,6 @@ nav .fa-solid {
         margin-top: 10px;
         height: fit-content;
         white-space: nowrap; /* Prevents the text from wrapping to the next line */
-    overflow: hidden;    /* Hides overflow text that exceeds the container width */
-    text-overflow: ellipsis;
-
     }
     .header-text a {
         margin: 50px 0; /* Adjust button spacing for small screens */
