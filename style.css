@@ -217,7 +217,10 @@ nav {
     transition: opacity 0.5s ease;
 }
 
-#work4 #work5{
+#work4 {
+    display: none; /* Initially hide the 4th work */
+}
+#work5 {
     display: none; /* Initially hide the 4th work */
 }
 
