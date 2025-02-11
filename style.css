@@ -223,6 +223,9 @@ nav {
 #work5 {
     display: none; /* Initially hide the 4th work */
 }
+#work6 {
+    display: none; /* Initially hide the 4th work */
+}
 
 .work img {
     width: 100%;
