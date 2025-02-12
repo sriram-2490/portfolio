@@ -385,11 +385,13 @@ showSlide(currentSlide);
     document.addEventListener('DOMContentLoaded', function() {
         var work4 = document.getElementById('work4');
         var work5 = document.getElementById('work5');
+        var work6 = document.getElementById('work6');
         var button = document.getElementById('explore-more');
         
         // Initial state setup
         work4.style.display = "none";
         work5.style.display = "none";
+        work6.style.display = "none";
         button.innerHTML = "Explore More";
 
         // Button click event to toggle display and change text
@@ -397,10 +399,12 @@ showSlide(currentSlide);
             if (work4.style.display === "none" && work5.style.display === "none") {
                 work4.style.display = "block";  // Show the 4th work
                 work5.style.display = "block";  // Show the 5th work
+                work6.style.display = "block";  
                 button.innerHTML = "See Less";  // Change the button text to "See Less"
             } else {
                 work4.style.display = "none";  // Hide the 4th work
                 work5.style.display = "none";  // Hide the 5th work
+                work6.style.display = "block";  
                 button.innerHTML = "Explore More"; // Change the button text back
             }
         });
