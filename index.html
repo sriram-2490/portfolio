@@ -382,31 +382,35 @@ showSlide(currentSlide);
     <scripts>
         <script>
     // Ensure work4 and work5 are initially hidden and button text is "Explore More"
-    document.addEventListener('DOMContentLoaded', function() {
-        var work4 = document.getElementById('work4');
-        var work5 = document.getElementById('work5');
-        var work6 = document.getElementById('work6');
-        var button = document.getElementById('explore-more');
-        
-        // Initial state setup
-        work4.style.display = "none";
-        work5.style.display = "none";
-        work6.style.display = "none";
-        button.innerHTML = "Explore More";
+    document.addEventListener('DOMContentLoaded', function () {
+    var work4 = document.getElementById('work4');
+    var work5 = document.getElementById('work5');
+    var work6 = document.getElementById('work6');
+    var button = document.getElementById('explore-more');
 
-        // Button click event to toggle display and change text
-        button.addEventListener('click', function() {
-            if (work4.style.display === "none" && work5.style.display === "none"&&work6.style.display === "none") {
-                work4.style.display = "block";  // Show the 4th work
-                work5.style.display = "block";  // Show the 5th work
-                work6.style.display = "block";  
-                button.innerHTML = "See Less";  // Change the button text to "See Less"
-            } else {
-                work4.style.display = "none";  // Hide the 4th work
-                work5.style.display = "none";  // Hide the 5th work
-                work6.style.display = "block";  
-                button.innerHTML = "Explore More"; // Change the button text back
-            }
+    // Initial state setup
+    work4.style.display = "none";
+    work5.style.display = "none";
+    work6.style.display = "none";
+    button.innerHTML = "Explore More";
+
+    // Toggle visibility and button text
+    button.addEventListener('click', function () {
+        var isHidden = work4.style.display === "none" && work5.style.display === "none" && work6.style.display === "none";
+
+        if (isHidden) {
+            // Show all works
+            work4.style.display = "block";
+            work5.style.display = "block";
+            work6.style.display = "block";
+            button.innerHTML = "See Less";
+        } else {
+            // Hide all works
+            work4.style.display = "none";
+            work5.style.display = "none";
+            work6.style.display = "none";
+            button.innerHTML = "Explore More";
+        }
         });
     });
 </script>          
