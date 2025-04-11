@@ -45,21 +45,24 @@ nav {
 #side-menu {
     display: flex;
     list-style: none;
-    width: auto;
     padding: 0; /* Remove any extra padding */
     margin: 0;  /* Remove any extra margin */
-    align-items: top; /* Vertically center items */
-    height: 30px; /* Set a specific height if needed */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Make the side menu full-height */
     transition: width 0.3s ease-in-out; /* Smooth transition for width */
+    width: 120px; /* Set a width for the side menu */
 }
 
 /* Menu items */
 #side-menu li {
-    margin: 0 10px;
+    margin: 15px 0;
     line-height: 60px; /* Align text vertically */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Smooth hover effect */
 }
 
+/* Menu item hover effect */
 #side-menu li:hover {
     transform: scale(1.1); /* Slightly enlarge the menu item */
     background-color: rgba(255, 255, 255, 0.1); /* Add background color on hover */
@@ -75,6 +78,7 @@ nav {
     transition: color 0.3s ease; /* Smooth color change */
 }
 
+/* Link hover effect */
 #side-menu a:hover {
     color: #00bcd4; /* Change the color when hovered */
 }
@@ -88,6 +92,7 @@ nav {
     transition: color 0.3s ease; /* Smooth color change for icons */
 }
 
+/* Icon hover effect */
 .fa-bars:hover, .fa-circle-xmark:hover {
     color: #00bcd4; /* Change the color of the icons on hover */
 }
