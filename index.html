@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.PNG" />
     <script src="https://kit.fontawesome.com/2eb0189c50.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,11 +29,11 @@
                 <!-- Open Menu Icon -->
                 <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
             </nav>
-
+            
             <div class="header-text">
                 <p><strong>Hello</strong></p>
                 <h1>I'm <span class="text"></span></h1> <!-- Change name here -->
-                <a href="images/Sai_Venkata_Sriram_Chowdary_Karicheti.pdf" class="btn btn2">Download CV</a>
+                <a href="https://docs.google.com/document/d/1c3q-a99Ku_SGWUpX5_DZy9h7yit-mrry/edit?usp=sharing&ouid=103704667992598599800&rtpof=true&sd=true" class="btn btn2">Download CV</a>
                 <a href="#contact" class="btn btn2">Hire Me</a>
             </div>
             </div>
@@ -147,6 +148,30 @@
                     <a href="https://ai-trip-planner-mewl.vercel.app/"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
+            <div class="work" id="work7">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h3>Chest Cancer Classification</h3>
+                    <p>end-to-end pipeline for chest cancer classification using machine learning. The pipeline includes data ingestion, model training, evaluation, and deployment.</p>
+                    <a href="https://github.com/sriram-2490/chest-cancer-classification"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work" id="work8">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3>E-Commerce Analyst Big Data Engineering Project</h3>
+                    <p>build a robust ETL pipeline for analyzing the Brazilian E-commerce dataset provided by Olist</p>
+                    <a href="https://github.com/sriram-2490/big-data-ecommerce"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work" id="work9">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3>Social-Media-Mental-Health-Analysis</h3>
+                    <p>This project analyzes the impact of social media usage on mental health indicators such as distraction, sleep issues, and social comparison. The goal is to identify correlations between social media habits and psychological well-being</p>
+                    <a href="https://github.com/sriram-2490/Social-Media-Mental-Health-Analysis"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
         </div>
         <a href="javascript:void(0)" id="explore-more" class="btn">Explore More</a>
     </div>
@@ -219,7 +244,7 @@
     <div class="container">
         <div class="row">
             <div class="contact-left">
-                <p><i class="fa-solid fa-envelope"></i> sriramchaowdary@gmail.com</p>
+                <p><i class="fa-solid fa-envelope"></i> sriramchowdary.karicheti@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i> +1 3144105084</p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/sriram-chowdary-4bb77b250/" target="_blank">
@@ -396,12 +421,18 @@ showSlide(currentSlide);
     var work4 = document.getElementById('work4');
     var work5 = document.getElementById('work5');
     var work6 = document.getElementById('work6');
+    var work7 = document.getElementById('work7');
+    var work8 = document.getElementById('work8');
+    var work9 = document.getElementById('work9');
     var button = document.getElementById('explore-more');
 
     // Initial state setup
     work4.style.display = "none";
     work5.style.display = "none";
     work6.style.display = "none";
+    work7.style.display = "none";
+    work8.style.display = "none";
+    work9.style.display = "none";
     button.innerHTML = "Explore More";
 
     // Toggle visibility and button text
@@ -413,12 +444,18 @@ showSlide(currentSlide);
             work4.style.display = "block";
             work5.style.display = "block";
             work6.style.display = "block";
+            work7.style.display = "block";
+            work8.style.display = "block";
+            work9.style.display = "block";
             button.innerHTML = "See Less";
         } else {
             // Hide all works
             work4.style.display = "none";
             work5.style.display = "none";
             work6.style.display = "none";
+            work7.style.display = "none";
+            work8.style.display = "none";
+            work9.style.display = "none";
             button.innerHTML = "Explore More";
         }
         });

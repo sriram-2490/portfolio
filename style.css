@@ -11,96 +11,113 @@ body{
     background: #080808;
     color: #ffffff;
 }
-#header{
+#header {
     width: 100%;
     height: 100vh;
-    background-image: url(images/imagebg.png);
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0,0.9) 100%),
+        url(images/imagebg.png);
     background-size: 600px;
     background-position: bottom right;
     background-repeat: no-repeat;
+    background-color: #000; /* Fallback background */
+}
 
+/* Remove background image on small screens */
+@media only screen and (max-width: 768px) {
+    #header {
+        background-image: none;
+    }
 }
 .container {
     padding: 10px 10%;
 }
 nav {
     display: flex;
-    justify-content: space-between; /* Aligns logo on the left and menu on the right */
-    align-items: center; /* Vertically aligns the items in the nav */
-    padding: 20px;
+    justify-content: space-between; /* Logo left, menu right */
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: #000000; /* Adjust to your preference */
-    z-index: 1000; /* Ensures the nav is above other elements */
-}
+    background-color: #000; /* Jet black for modern look */
+    padding: 10px 30px; /* Slim and sleek padding */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    z-index: 1000;
+    height: 60px; /* Slim height */
+    font-family: 'Poppins', sans-serif; /* Sleek font */
+  }
+  
 
 .logo {
-    height: 100px; /* Adjust the logo size as needed */
+    padding-left: 20px;
+    height: 110px; /* Adjust the logo size as needed */
 
 }
 
 /* Style for the menu links */
+/* Menu container */
 #side-menu {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    align-items: center; /* Vertically center items */
-    height: 40px; /* Ensure the menu bar height is smaller */
+    align-items: center;
+    height: 50px; /* Slightly increased height for better spacing */
     transition: width 0.3s ease-in-out;
-    justify-content: space-between; /* Ensure the items are spaced out horizontally */
-    background-color: #333; /* Add a background color for better visibility */
+    justify-content: space-between;
+    background-color: #111; /* Optional: dark background for contrast */
 }
 
 /* Menu items */
 #side-menu li {
-    margin: 0 8px; /* Reduce the margin between menu items */
-    line-height: 20px; /* Align text vertically */
+    margin: 0 10px;
+    line-height: 22px;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease;
     display: flex;
-    align-items: center; /* Vertically center the menu items */
+    align-items: center;
 }
 
 /* Hover effect on menu items */
 #side-menu li:hover {
-    transform: scale(1.1); /* Slightly enlarge the menu item */
+    transform: scale(1.1);
 }
 
 /* Menu links */
 #side-menu a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 14px; /* Smaller font size for a compact look */
+    font-size: 16px; /* Increased font size */
+    font-weight: 500; /* Slightly bolder text */
+    font-family: 'Segoe UI', sans-serif; /* Clean and modern font */
     display: inline-block;
-    padding: 8px 12px; /* Reduce padding around the text */
+    padding: 10px 14px; /* More breathing room */
     transition: color 0.3s ease;
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: nowrap;
 }
 
 /* Hover effect on menu links */
 #side-menu a:hover {
-    color: #00bcd4; /* Change the color when hovered */
+    color: #00bcd4;
 }
 
 /* Menu icons */
 .fa-bars, .fa-circle-xmark {
-    font-size: 20px; /* Smaller icon size */
+    font-size: 22px;
     cursor: pointer;
-    color: #000;
+    color: #ffffff;
     display: none;
     transition: color 0.3s ease;
 }
 
 /* Hover effect on menu icons */
 .fa-bars:hover, .fa-circle-xmark:hover {
-    color: #00bcd4; /* Change the color of the icons on hover */
+    color: #00bcd4;
 }
 
-/* Make the menu vertically constrained */
+/* Vertical alignment */
 #side-menu li, #side-menu a {
-    height: 100%; /* Make sure they fill the height of the menu */
+    height: 100%;
     display: flex;
     align-items: center;
 }
@@ -109,13 +126,13 @@ nav {
 @media only screen and (max-width: 800px) {
     #side-menu {
         display: none;
-        width: 120px;
+        width: 100%;
         height: auto;
     }
 
     .fa-bars {
         display: block;
-        padding-top: 25px;
+        padding-top: 20px;
     }
 
     #side-menu.active {
@@ -124,8 +141,8 @@ nav {
         top: 60px;
         right: 0;
         background-color: #000000;
-        width: 120px;
-        padding: 15px;
+        width: 100%;
+        padding: 20px;
     }
 
     #side-menu li {
@@ -134,11 +151,17 @@ nav {
         line-height: normal;
     }
 
-    /* Hover effect on mobile menu */
+    #side-menu a {
+        font-size: 18px; /* Bigger text for mobile */
+        font-weight: 600;
+        padding: 12px;
+    }
+
     #side-menu li:hover {
-        transform: scale(1.1); /* Slightly enlarge on hover */
+        transform: scale(1.1);
     }
 }
+
 .header-text{
     margin-top: 20%;
     font-size: 30px;   
@@ -271,6 +294,15 @@ nav {
     display: none; /* Initially hide the 4th work */
 }
 #work6 {
+    display: none; /* Initially hide the 4th work */
+}
+#work7 {
+    display: none; /* Initially hide the 4th work */
+}
+#work8 {
+    display: none; /* Initially hide the 4th work */
+}
+#work9 {
     display: none; /* Initially hide the 4th work */
 }
 
@@ -520,7 +552,7 @@ nav .fa-solid {
     display: none;
 }
 /* Mobile-Specific Adjustments */
-@media only screen and (max-width: 800px) 
+@media only screen and (max-width: 700px) 
 {
     body {
         margin: 0; /* Remove any default margins */
@@ -599,24 +631,39 @@ nav .fa-solid {
     .sub-title{
         font-size: 40px;
     }
-    .about-col-1, .about-col-2{
-        flex-basis: 100%;
-        text-align: center;
-        size-adjust: 20px;
-    }
-    .about-col-1{
-        margin-bottom: 30px;
-    }
-    .about-col-2{
-        font-size:15px;
-    }
-    .about-col-2 .p{
-        font-size: auto;
-    }
-    .tab-titles{
-        font-size: 16px;
-        margin-right: 50px;
-    }
+    .about-col-1,
+.about-col-2 {
+    flex-basis: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* Center horizontally */
+    justify-content: center;   /* Center vertically if needed */
+    padding: 20px;
+}
+
+.about-col-1 {
+    margin-bottom: 30px;
+}
+
+.about-col-2 {
+    font-size: 15px;
+}
+
+/* Fix selector (remove the dot before p) */
+.about-col-2 p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Optional: center the tab titles too */
+.tab-titles {
+    font-size: 16px;
+    margin: 20px auto;
+    text-align: center;
+}
+
     .contact-left, .contact-right{
         flex-basis: 100%;
     }
