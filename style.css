@@ -45,31 +45,31 @@ nav {
 #side-menu {
     display: flex;
     list-style: none;
-    padding: 0; /* Remove any extra padding */
-    margin: 0;  /* Remove any extra margin */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    height: 100vh; /* Full height for side menu */
-    transition: width 0.3s ease-in-out; /* Smooth transition for width */
-    width: 120px; /* Set width of side menu */
-    background-color: #000; /* Background color for the menu */
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    height: auto; /* Remove full height */
+    width: 120px;
+    background-color: #000;
+    transition: width 0.3s ease-in-out;
 }
 
 /* Menu items */
 #side-menu li {
-    margin: 10px 0; /* Space between items */
-    line-height: 60px; /* Align text vertically */
-    text-align: center; /* Center text horizontally */
-    padding: 10px 0; /* Ensure there's padding for spacing */
-    width: 100%; /* Ensure items take full width of menu */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    margin: 10px 0;
+    line-height: 60px;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Menu item hover effect */
 #side-menu li:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Background color on hover */
-    transform: scale(1.05); /* Slightly enlarge the item */
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 /* Menu links */
@@ -77,14 +77,14 @@ nav {
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
-    display: block; /* Ensures the link takes the full width of the item */
-    padding: 10px 0; /* Add padding to the link for clickable area */
-    transition: color 0.3s ease; /* Smooth transition for color */
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
 }
 
 /* Link hover effect */
 #side-menu a:hover {
-    color: #00bcd4; /* Change text color on hover */
+    color: #00bcd4;
 }
 
 /* Menu icons */
@@ -93,12 +93,12 @@ nav {
     cursor: pointer;
     color: #000;
     display: none;
-    transition: color 0.3s ease; /* Smooth color change */
+    transition: color 0.3s ease;
 }
 
 /* Icon hover effect */
 .fa-bars:hover, .fa-circle-xmark:hover {
-    color: #00bcd4; /* Change icon color on hover */
+    color: #00bcd4;
 }
 
 /* Mobile styles */
@@ -132,8 +132,8 @@ nav {
 
     /* Hover effect on mobile menu */
     #side-menu li:hover {
-        transform: scale(1.1); /* Slightly enlarge on hover */
-        background-color: rgba(255, 255, 255, 0.1); /* Add background color */
+        transform: scale(1.1);
+        background-color: rgba(255, 255, 255, 0.1);
     }
 }
 
