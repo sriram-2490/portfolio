@@ -45,52 +45,53 @@ nav {
 #side-menu {
     display: flex;
     list-style: none;
+    width: auto; /* Set to auto so it adjusts based on content */
 }
 
 #side-menu li {
-    margin: 0 15px;
+    margin: 0 10px; /* Reduced spacing */
 }
 
 #side-menu a {
     text-decoration: none;
-    color: #ffffff; /* Change to desired color */
-    font-size: 18px; /* Adjust font size */
+    color: #ffffff;
+    font-size: 18px;
 }
 
 /* Style for the menu icons */
 .fa-bars, .fa-circle-xmark {
     font-size: 30px;
     cursor: pointer;
-    color: #000; /* Change to desired color */
-    display: none; /* Hidden by default, shown on mobile */
+    color: #000;
+    display: none;
 }
 
 /* Make the menu visible on mobile */
 @media only screen and (max-width: 600px) {
     #side-menu {
-        display: none; /* Hide the menu by default */
+        display: none;
+        width: 120px; /* Reduced from 150px */
     }
-    
+
     .fa-bars {
-        display: block; /* Show the menu icon on mobile */
+        display: block;
         padding-top: 25px;
     }
 
     #side-menu.active {
-        display: block; /* Show the menu when active */
+        display: block;
         position: absolute;
         top: 60px;
         right: 0px;
         background-color: #000000;
-        width: 150px;
-        padding: 20px;
+        width: 120px; /* Adjust width here too */
+        padding: 15px;
     }
 
     #side-menu li {
-        margin: 20px 0;
+        margin: 15px 0;
         text-align: center;
     }
-
 }
 .header-text{
     margin-top: 20%;
