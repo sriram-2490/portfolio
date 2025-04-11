@@ -45,18 +45,17 @@ nav {
 #side-menu {
     display: flex;
     list-style: none;
-    width: auto;
-    padding: 0; /* Remove any extra padding */
-    margin: 0;  /* Remove any extra margin */
-    align-items: top; /* Vertically center items */
-    height: 30px; /* Set a specific height if needed */
-    transition: width 0.3s ease-in-out; /* Smooth transition for width */
+    padding: 0;
+    margin: 0;
+    align-items: center; /* Vertically center items */
+    height: 40px; /* Set a shorter height for the menu */
+    transition: width 0.3s ease-in-out;
 }
 
 /* Menu items */
 #side-menu li {
-    margin: 0 10px;
-    line-height: 20px; /* Align text vertically */
+    margin: 0 8px; /* Reduce the margin between menu items */
+    line-height: 25px; /* Align text vertically */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Smooth hover effect */
 }
 
@@ -68,10 +67,10 @@ nav {
 #side-menu a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px; /* Reduce the font size for a more compact look */
     display: inline-block;
-    padding: 10px; /* Padding around the text */
-    transition: color 0.3s ease; /* Smooth color change */
+    padding: 8px 12px; /* Reduce the padding around the text */
+    transition: color 0.3s ease;
 }
 
 #side-menu a:hover {
@@ -80,11 +79,11 @@ nav {
 
 /* Menu icons */
 .fa-bars, .fa-circle-xmark {
-    font-size: 30px;
+    font-size: 25px; /* Reduce the icon size */
     cursor: pointer;
     color: #000;
     display: none;
-    transition: color 0.3s ease; /* Smooth color change for icons */
+    transition: color 0.3s ease;
 }
 
 .fa-bars:hover, .fa-circle-xmark:hover {
