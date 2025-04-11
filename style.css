@@ -62,7 +62,6 @@ nav {
 
 #side-menu li:hover {
     transform: scale(1.1); /* Slightly enlarge the menu item */
-    background-color: rgba(255, 255, 255, 0.1); /* Add background color on hover */
 }
 
 /* Menu links */
@@ -124,7 +123,6 @@ nav {
     /* Hover effect on mobile menu */
     #side-menu li:hover {
         transform: scale(1.1); /* Slightly enlarge on hover */
-        background-color: rgba(255, 255, 255, 0.1); /* Add background color */
     }
 }
 .header-text{
