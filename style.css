@@ -50,22 +50,26 @@ nav {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
-    height: 100vh; /* Make the side menu full-height */
+    height: 100vh; /* Full height for side menu */
     transition: width 0.3s ease-in-out; /* Smooth transition for width */
-    width: 120px; /* Set a width for the side menu */
+    width: 120px; /* Set width of side menu */
+    background-color: #000; /* Background color for the menu */
 }
 
 /* Menu items */
 #side-menu li {
-    margin: 15px 0;
+    margin: 10px 0; /* Space between items */
     line-height: 60px; /* Align text vertically */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease; /* Smooth hover effect */
+    text-align: center; /* Center text horizontally */
+    padding: 10px 0; /* Ensure there's padding for spacing */
+    width: 100%; /* Ensure items take full width of menu */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
 }
 
 /* Menu item hover effect */
 #side-menu li:hover {
-    transform: scale(1.1); /* Slightly enlarge the menu item */
-    background-color: rgba(255, 255, 255, 0.1); /* Add background color on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Background color on hover */
+    transform: scale(1.05); /* Slightly enlarge the item */
 }
 
 /* Menu links */
@@ -73,14 +77,14 @@ nav {
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
-    display: inline-block;
-    padding: 10px; /* Padding around the text */
-    transition: color 0.3s ease; /* Smooth color change */
+    display: block; /* Ensures the link takes the full width of the item */
+    padding: 10px 0; /* Add padding to the link for clickable area */
+    transition: color 0.3s ease; /* Smooth transition for color */
 }
 
 /* Link hover effect */
 #side-menu a:hover {
-    color: #00bcd4; /* Change the color when hovered */
+    color: #00bcd4; /* Change text color on hover */
 }
 
 /* Menu icons */
@@ -89,12 +93,12 @@ nav {
     cursor: pointer;
     color: #000;
     display: none;
-    transition: color 0.3s ease; /* Smooth color change for icons */
+    transition: color 0.3s ease; /* Smooth color change */
 }
 
 /* Icon hover effect */
 .fa-bars:hover, .fa-circle-xmark:hover {
-    color: #00bcd4; /* Change the color of the icons on hover */
+    color: #00bcd4; /* Change icon color on hover */
 }
 
 /* Mobile styles */
