@@ -517,7 +517,7 @@ nav {
     .carousel::after {
       content: "Swipe Left/Right";   /* Custom text indicating swipe */
       position: absolute;
-      top: 0%;  /* Vertically center */
+      top: 65%;  /* Vertically center */
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 4vw;
@@ -627,7 +627,7 @@ nav .fa-solid {
         flex-direction: column;
     }
     .header-text {
-        margin-top: 60px; /* Adjust margin-top for smaller screens */
+        margin-top: 200px; /* Adjust margin-top for smaller screens */
         font-size: 1px;
         text-align: center;
     }
