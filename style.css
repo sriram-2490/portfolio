@@ -23,12 +23,6 @@ body{
     background-color: #000; /* Fallback background */
 }
 
-/* Remove background image on small screens */
-@media only screen and (max-width: 768px) {
-    #header {
-        background-image: none;
-    }
-}
 .container {
     padding: 10px 10%;
 }
@@ -120,46 +114,6 @@ nav {
     height: 100%;
     display: flex;
     align-items: center;
-}
-
-/* Mobile styles */
-@media only screen and (max-width: 800px) {
-    #side-menu {
-        display: none;
-        width: 100%;
-        height: auto;
-    }
-
-    .fa-bars {
-        display: block;
-        padding-top: 20px;
-    }
-
-    #side-menu.active {
-        display: block;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #000000;
-        width: 100%;
-        padding: 20px;
-    }
-
-    #side-menu li {
-        margin: 15px 0;
-        text-align: center;
-        line-height: normal;
-    }
-
-    #side-menu a {
-        font-size: 18px; /* Bigger text for mobile */
-        font-weight: 600;
-        padding: 12px;
-    }
-
-    #side-menu li:hover {
-        transform: scale(1.1);
-    }
 }
 
 .header-text{
@@ -551,182 +505,169 @@ form btn2{
 nav .fa-solid {
     display: none;
 }
-/* Mobile-Specific Adjustments */
-@media only screen and (max-width: 700px) 
-{
+
+@media only screen and (max-width: 800px) {
+    /* Base reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;        /* No horizontal scroll at all */
+      width: 100vw;              /* Constrain body to viewport width */
+    }
+  
+    /* Single‑column flex container */
     body {
-        margin: 0; /* Remove any default margins */
-        padding: 0;
-        overflow-x: hidden; /* Prevent horizontal scroll */
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      align-items: center;       /* Center everything horizontally */
     }
+  
+    /* Header full‑screen, centered */
+    #header {
+      width: 100%;
+      height: 100vh;             /* Full viewport height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;   /* Center vertically */
+      align-items: center;       /* Center horizontally */
+      background-size: cover;    
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      padding: 20px;
+    }
+  
+    /* Logo centered */
+    .logo {
+      margin-bottom: 20px;
+    }
+    .logo img {
+      max-width: 150px;
+      width: 30vw;               /* Scales down on small devices */
+      height: auto;
+    }
+  
+    /* Header text and button */
     .header-text {
-        margin-top: 130px; /* Adjust margin-top for smaller screens */
-        font-size: 20px;
-        text-align: center;
+      margin: 0 auto 20px;
+      padding: 0 10px;
     }
-
     .header-text h1 {
-        font-size: 30px;
-        margin-top: 10px;
-        height: fit-content;
+      font-size: 6vw;            /* Scales with viewport width */
+      margin: 10px 0;
     }
-    .header-text a {
-        margin: 50px 0; /* Adjust button spacing for small screens */
-    }
-    .btn {
-        padding: 10px 25px; /* Adjust button padding for small screens */
-    }
-
     .header-text p {
-        font-size: 24px;
+      font-size: 4.5vw;
+      margin: 10px 0;
     }
-        #header {
-        background-size: 100%;
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        justify-content: flex-start;
-        padding-top: 20px;
+    .header-text a,
+    .btn {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 3vw 6vw;
+      font-size: 4vw;
+      text-decoration: none;
+      border-radius: 6px;
     }
+  
+    /* Nav toggle stays top-right */
+    nav .fa-bars,
     nav .fa-solid {
-        display: block;
-        font-size: 25px; /* Fixed the typo (font size -> font-size) */
-        cursor: pointer;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 3; /* Ensures the icon appears above other elements */
-        color: #fff; /* Optional: Makes the icon visible */
+      font-size: 6vw;
+      position: fixed;
+      top: 4vw;
+      right: 4vw;
+      z-index: 100;
+      color: #fff;
     }
-
     nav ul {
-        background: #7fb5f3;
-        position: fixed;
-        top: 0;
-        right: -200px; /* Initially hidden, slides in on toggle */
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right 0.3s ease; /* Smooth transition */
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80vw;
+      height: 100vh;
+      background: #7fb5f3;
+      padding-top: 20vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: right 0.3s ease;
     }
-
-    nav ul li {
-        display: block;
-        margin: 25px;
-        text-align: center; /* Aligns text in the center of the list items */
-    }
-
     nav ul.active {
-        right: 0; /* Brings the menu into view */
+      right: 0;
     }
-
+    nav ul li {
+      margin: 4vw 0;
+      font-size: 5vw;
+    }
     nav ul .fa-solid {
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
+      position: absolute;
+      top: 4vw;
+      left: 4vw;
     }
-    .sub-title{
-        font-size: 40px;
-    }
+  
+    /* Sections (about, work, portfolio, etc.) */
     .about-col-1,
-.about-col-2 {
-    flex-basis: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;       /* Center horizontally */
-    justify-content: center;   /* Center vertically if needed */
-    padding: 20px;
-}
-
-.about-col-1 {
-    margin-bottom: 30px;
-}
-
-.about-col-2 {
-    font-size: 15px;
-}
-
-/* Fix selector (remove the dot before p) */
-.about-col-2 p {
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 600px;
-}
-
-/* Optional: center the tab titles too */
-.tab-titles {
-    font-size: 16px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-    .contact-left, .contact-right{
-        flex-basis: 100%;
+    .about-col-2,
+    .contact-left,
+    .contact-right {
+      width: 100%;
+      max-width: 600px;
+      padding: 5vw 4vw;
+      box-sizing: border-box;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .about-col-2 p {
+      line-height: 1.6;
+    }
+  
+    .work-list {
+      display: grid;
+      grid-template-columns: 1fr; /* Single column */
+      gap: 4vw;
+      width: 100%;
+      padding: 0 4vw;
     }
     .work {
-        height: 220px; /* Reduce height for smaller screens */
+      width: 100%;
+      height: auto;
     }
-
     .work img {
-        height: 100%;
-        object-fit: cover; /* Ensure images fill the container neatly */
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
-
-    .work-list {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Slightly smaller grid items */
-        grid-gap: 20px; /* Reduce spacing for smaller screens */
+  
+    /* Tabs, certificates, etc. */
+    .tab-titles {
+      width: 100%;
+      text-align: center;
+      font-size: 4vw;
+      margin: 6vw 0;
     }
-
-    .layer {
-        padding: 10px 20px; /* Reduce padding inside the overlay */
-        font-size: 12px; /* Smaller text for smaller screens */
-    }
-
-    .layer h3 {
-        margin-bottom: 15px; /* Reduce margin for better alignment */
-        font-size: 16px; /* Adjust heading size */
-    }
-
-    .layer a {
-        width: 50px; /* Smaller button size */
-        height: 50px;
-        font-size: 18px;
-    }
-
-    #portfolio {
-        padding: 20px 10px; /* Adjust outer padding for smaller screens */
-    }
-    /* Default state for navigation links on mobile screens */
-
-    #certificates .carousel {
-        padding: 5px; /* Reduce padding for smaller screens */
-    }
-
+    #certificates .carousel,
     #certificates .slide {
-        width: 90%; /* Slightly narrower width for better fit */
-        padding: 8px; /* Adjust padding */
-        margin: 0 auto; /* Center the slides */
+      width: 90%;
+      margin: 0 auto 4vw;
+      padding: 2vw;
     }
-
     #certificates .content h3 {
-        font-size: 16px; /* Decrease font size of the title */
-        line-height: 1.4; /* Adjust line height for readability */
+      font-size: 5vw;
+      line-height: 1.3;
     }
-
     #certificates .content p {
-        font-size: 12px; /* Reduce font size of the description */
-        line-height: 1.5; /* Adjust line height for better spacing */
+      font-size: 3.5vw;
+      line-height: 1.5;
     }
-
     #certificates .link-icon {
-        font-size: 14px; /* Adjust size of the link icon */
+      font-size: 5vw;
     }
+  }  
 
-}
+
 #msg{
     color: #1ae000;
     margin-top: -10px;
