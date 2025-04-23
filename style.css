@@ -432,6 +432,94 @@ nav {
     right: 10px;
 }
 
+@media only screen and (max-width: 800px) {
+    /* Certificates Section Wrapper */
+    #certificates {
+      background: #000;
+      color: #fff;
+      padding: 6vw 0;
+      text-align: center;
+    }
+  
+    #certificates .container {
+      max-width: 100%;
+      padding: 0 4vw;
+      box-sizing: border-box;
+    }
+  
+    #certificates .sub-title {
+      font-size: 6vw;
+      font-weight: 600;
+      margin-bottom: 8vw;
+      color: #7fb5f3;
+    }
+  
+    /* Carousel Container */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+  
+    /* Slides Wrapper */
+    .slides {
+      display: flex;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 4vw;
+      padding: 2vw 0;
+      scroll-snap-type: x mandatory;
+    }
+  
+    /* Individual Slide Card */
+    .slide {
+      flex: 0 0 80%;        /* 80% of viewport width */
+      max-width: 300px;     /* Cap width */
+      margin: 0 auto;       /* Center horizontally */
+      padding: 3vw;
+      background: #121212;  /* Preserve original background */
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      box-sizing: border-box;
+      scroll-snap-align: center;
+      text-align: center;
+    }
+  
+    .slide h3 {
+      font-size: 4.5vw;
+      color: #7fb5f3;
+      margin-bottom: 2vw;
+      line-height: 1.3;
+    }
+  
+    .slide p {
+      font-size: 3vw;
+      color: #fff;
+      line-height: 1.5;
+      margin-bottom: 4vw;
+    }
+  
+    .slide .link-icon {
+      font-size: 5vw;
+      color: #7fb5f3;
+      display: inline-block;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+  
+    .slide .link-icon:hover {
+      color: #fff;
+    }
+  
+    /* Hide Navigation Buttons */
+    .carousel button {
+      display: none;
+    }
+  }
+  
 .contact-left{
     flex-basis: 35%;
 }
@@ -696,49 +784,6 @@ nav .fa-solid {
         padding: 30px 5px; /* Adjust outer padding for smaller screens */
     }
     /* Default state for navigation links on mobile screens */
-  
-    #certificates .carousel {
-        padding: 5px; /* Reduce padding for smaller screens */
-    }
-  
-    #certificates .slide {
-        width: 20%; /* Slightly narrower width for better fit */
-        padding: 5px; /* Adjust padding */
-        margin: 0 auto; /* Center the slides */
-    }
-  
-    #certificates .content h3 {
-        font-size: 16px; /* Decrease font size of the title */
-        line-height: 1.4; /* Adjust line height for readability */
-    }
-  
-    #certificates .content p {
-        font-size: 12px; /* Reduce font size of the description */
-        line-height: 1.5; /* Adjust line height for better spacing */
-    }
-  
-    #certificates .link-icon {
-        font-size: 15px; /* Adjust size of the link icon */
-    }
-    .carousel .prev, .carousel .next {
-        position: absolute;
-        top: 50%; /* Vertically center the buttons */
-        background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
-        color: white; /* Button text color */
-        border: none; /* Remove default button border */
-        padding: 10px; /* Add padding for larger clickable area */
-        font-size: 18px; /* Increase font size of the arrows */
-        z-index: 10; /* Ensure the buttons appear on top of other elements */
-    }
-  
-    .carousel .prev {
-        left: 0px;
-    }
-  
-    .carousel .next {
-        right: 0px;
-    }
-
     section, #certificates, #about, #portfolio, .about-col-1, .about-col-2 {
         max-width: 100%;
         margin-left: auto;
