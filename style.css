@@ -506,12 +506,21 @@ nav .fa-solid {
     display: none;
 }
 
-@media only screen and (max-width: 800px) 
-{
+@media only screen and (max-width: 800px) {
+    /* Prevent any horizontal overflow and cap widths */
+    html, body {
+      overflow-x: hidden !important;
+      margin: 0;
+      padding: 0;
+    }
+    body > * {
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+  
     html,body {
-        margin: 10; /* Remove any default margins */
-        padding: 10;
-        overflow-x: hidden; /* Prevent horizontal scroll */
+        /* margin: 10; removed to prevent unintended offsets */
+        padding: 10px;
         display: block;
         flex-direction: column;
     }
@@ -520,7 +529,7 @@ nav .fa-solid {
         font-size: 10px;
         text-align: center;
     }
-
+  
     .header-text h1 {
         font-size: 30px;
         margin-top: 10px;
@@ -533,7 +542,7 @@ nav .fa-solid {
         padding: 10px 25px; /* Adjust button padding for small screens */
     }
     
-
+  
     .header-text p {
         font-size: 40px;
     }
@@ -575,8 +584,8 @@ nav .fa-solid {
         padding: 0.25rem;   
         font-size: 100px;      /* Prevents touching the viewport edge */
       }
-
-    
+  
+  
     nav ul {
         background: #7fb5f3;
         position: fixed;
@@ -588,17 +597,17 @@ nav .fa-solid {
         z-index: 2;
         transition: right 0.3s ease; /* Smooth transition */
     }
-
+  
     nav ul li {
         display: block;
         margin: 25px;
         text-align: center; /* Aligns text in the center of the list items */
     }
-
+  
     nav ul.active {
         right: 0; /* Brings the menu into view */
     }
-
+  
     nav ul .fa-solid {
         position: absolute;
         top: 25px;
@@ -609,7 +618,7 @@ nav .fa-solid {
         font-size: 40px;
     }
     .about-col-1,
-.about-col-2 {
+  .about-col-2 {
     flex-basis: 100%;
     text-align: center;
     display: flex;
@@ -617,88 +626,88 @@ nav .fa-solid {
     align-items: center;       /* Center horizontally */
     justify-content: center;   /* Center vertically if needed */
     padding: 20px;
-}
-
-.about-col-1 {
+  }
+  
+  .about-col-1 {
     margin-bottom: 30px;
-}
-
-.about-col-2 {
+  }
+  
+  .about-col-2 {
     font-size: 15px;
-}
-
-/* Fix selector (remove the dot before p) */
-.about-col-2 p {
+  }
+  
+  /* Fix selector (remove the dot before p) */
+  .about-col-2 p {
     font-size: 16px;
     line-height: 1.6;
     max-width: 600px;
-}
-
-/* Optional: center the tab titles too */
-.tab-titles {
+  }
+  
+  /* Optional: center the tab titles too */
+  .tab-titles {
     font-size: 16px;
     margin: 20px auto;
     text-align: center;
-}
-
+  }
+  
     .contact-left, .contact-right{
         flex-basis: 100%;
     }
     .work {
         height: 220px; /* Reduce height for smaller screens */
     }
-
+  
     .work img {
         height: 100%;
         object-fit: cover; /* Ensure images fill the container neatly */
     }
-
+  
     .work-list {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Slightly smaller grid items */
         grid-gap: 20px; /* Reduce spacing for smaller screens */
     }
-
+  
     .layer {
         padding: 10px 20px; /* Reduce padding inside the overlay */
         font-size: 12px; /* Smaller text for smaller screens */
     }
-
+  
     .layer h3 {
         margin-bottom: 15px; /* Reduce margin for better alignment */
         font-size: 16px; /* Adjust heading size */
     }
-
+  
     .layer a {
         width: 50px; /* Smaller button size */
         height: 50px;
         font-size: 18px;
     }
-
+  
     #portfolio {
         padding: 30px 5px; /* Adjust outer padding for smaller screens */
     }
     /* Default state for navigation links on mobile screens */
-
+  
     #certificates .carousel {
         padding: 5px; /* Reduce padding for smaller screens */
     }
-
+  
     #certificates .slide {
         width: 20%; /* Slightly narrower width for better fit */
         padding: 5px; /* Adjust padding */
         margin: 0 auto; /* Center the slides */
     }
-
+  
     #certificates .content h3 {
         font-size: 16px; /* Decrease font size of the title */
         line-height: 1.4; /* Adjust line height for readability */
     }
-
+  
     #certificates .content p {
         font-size: 12px; /* Reduce font size of the description */
         line-height: 1.5; /* Adjust line height for better spacing */
     }
-
+  
     #certificates .link-icon {
         font-size: 15px; /* Adjust size of the link icon */
     }
@@ -712,30 +721,30 @@ nav .fa-solid {
         font-size: 18px; /* Increase font size of the arrows */
         z-index: 10; /* Ensure the buttons appear on top of other elements */
     }
-
+  
     .carousel .prev {
         left: 0px;
     }
-
+  
     .carousel .next {
         right: 0px;
     }
-
-
-}
-
-@media only screen and (max-width: 800px) {
+  
+  
+  }
+  
+  @media only screen and (max-width: 800px) {
     #side-menu {
         display: none;
         width: 100%;
         height: auto;
     }
-
+  
     .fa-bars {
         display: block;
         padding-top: 20px;
     }
-
+  
     #side-menu.active {
         display: block;
         position: absolute;
@@ -745,29 +754,30 @@ nav .fa-solid {
         width: 100%;
         padding: 20px;
     }
-
+  
     #side-menu li {
         margin: 15px 0;
         text-align: center;
         line-height: normal;
     }
-
+  
     #side-menu a {
         font-size: 18px; /* Bigger text for mobile */
         font-weight: 600;
         padding: 12px;
     }
-
+  
     #side-menu li:hover {
         transform: scale(1.1);
     }
-}
-
-@media only screen and (max-width: 768px) {
+  }
+  
+  @media only screen and (max-width: 768px) {
     #header {
         background-image: none;
     }
-} 
+  }
+  
 
 
 #msg{
