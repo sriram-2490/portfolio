@@ -515,9 +515,9 @@ nav {
   
     /* Swipe left / right indicator */
     .carousel::after {
-      content: "Swipe Left/Right";   /* Custom text indicating swipe */
+      content: "Swipe Left/Right on Certifications";   /* Custom text indicating swipe */
       position: absolute;
-      top: 65%;  /* Vertically center */
+      top: 80%;  /* Vertically center */
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 4vw;
