@@ -513,7 +513,6 @@ nav .fa-solid {
         padding: 0 !important;
         overflow-x: hidden !important;
         width: 100vw !important;
-      }
     }
     body > * {
       max-width: 100vw;
@@ -627,7 +626,7 @@ nav .fa-solid {
     flex-direction: column;
     align-items: center;       /* Center horizontally */
     justify-content: center;   /* Center vertically if needed */
-    padding: 20px;
+    left-padding: 10px;
   }
   
   .about-col-1 {
@@ -647,9 +646,17 @@ nav .fa-solid {
   
   /* Optional: center the tab titles too */
   .tab-titles {
-    font-size: 16px;
-    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;         /* Allow titles to wrap to next line */
+    justify-content: center; /* Center them */
+    gap: 4vw;                /* Space between each tab */
+    font-size: 4vw;          /* Responsive sizing */
+    margin: 6vw auto;        /* Adjust vertical spacing */
+  }
+  .tab-titles p {
+    flex: 1 1 auto;          /* Let each tab shrink/grow */
     text-align: center;
+    white-space: nowrap;     /* Prevent internal wrapping */
   }
   
     .contact-left, .contact-right{
@@ -740,7 +747,8 @@ nav .fa-solid {
         padding-left: 10px;
         padding-right: 10px;
       }
-      
+}
+
   @media only screen and (max-width: 800px) {
     #side-menu {
         display: none;
