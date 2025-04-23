@@ -627,7 +627,7 @@ nav .fa-solid {
         flex-direction: column;
     }
     .header-text {
-        margin-top: 15px; /* Adjust margin-top for smaller screens */
+        margin-top: 60px; /* Adjust margin-top for smaller screens */
         font-size: 1px;
         text-align: center;
     }
