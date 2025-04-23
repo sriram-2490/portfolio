@@ -506,7 +506,7 @@ nav .fa-solid {
     display: none;
 }
 
-@media only screen and (max-width: 700px) 
+@media only screen and (max-width: 800px) 
 {
     body {
         margin: 10; /* Remove any default margins */
@@ -675,7 +675,7 @@ nav .fa-solid {
     }
 
     #portfolio {
-        padding: 20px 10px; /* Adjust outer padding for smaller screens */
+        padding: 30px 5px; /* Adjust outer padding for smaller screens */
     }
     /* Default state for navigation links on mobile screens */
 
@@ -684,8 +684,8 @@ nav .fa-solid {
     }
 
     #certificates .slide {
-        width: 90%; /* Slightly narrower width for better fit */
-        padding: 8px; /* Adjust padding */
+        width: 20%; /* Slightly narrower width for better fit */
+        padding: 5px; /* Adjust padding */
         margin: 0 auto; /* Center the slides */
     }
 
@@ -700,8 +700,27 @@ nav .fa-solid {
     }
 
     #certificates .link-icon {
-        font-size: 14px; /* Adjust size of the link icon */
+        font-size: 15px; /* Adjust size of the link icon */
     }
+    .carousel .prev, .carousel .next {
+        position: absolute;
+        top: 50%; /* Vertically center the buttons */
+        background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+        color: white; /* Button text color */
+        border: none; /* Remove default button border */
+        padding: 10px; /* Add padding for larger clickable area */
+        font-size: 18px; /* Increase font size of the arrows */
+        z-index: 10; /* Ensure the buttons appear on top of other elements */
+    }
+
+    .carousel .prev {
+        left: 0px;
+    }
+
+    .carousel .next {
+        right: 0px;
+    }
+
 
 }
 
