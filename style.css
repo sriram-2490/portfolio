@@ -508,11 +508,11 @@ nav .fa-solid {
 
 @media only screen and (max-width: 800px) 
 {
-    body {
+    html,body {
         margin: 10; /* Remove any default margins */
         padding: 10;
         overflow-x: hidden; /* Prevent horizontal scroll */
-        display: flex;
+        display: block;
         flex-direction: column;
     }
     .header-text {
